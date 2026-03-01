@@ -26,8 +26,19 @@ services:
       - "443:443"
       - "443:443/udp"
     volumes:
-      - ./caddy-conf:/etc/caddy
-      - ./caddy-site:/srv
+      - ./conf:/etc/caddy
+      - ./site:/srv
+      - ./data:/data
+      - ./config:/config
+    networks:
+      net:
+        ipv4_address: 172.21.0.2
+
+networks:
+  net:
+    ipam:
+      config:
+        - subnet: 172.21.0.0/16
 ```
 
 ## Cadyfile
