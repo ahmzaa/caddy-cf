@@ -29,3 +29,18 @@ services:
       - ./caddy-conf:/etc/caddy
       - ./caddy-site:/srv
 ```
+
+## Cadyfile
+```
+(cloudflare) {
+  tls {
+    dns cloudflare TOKEN
+  }
+}
+
+# Reverse Proxy Definitions
+test.example.com {
+  reverse_proxy http://your-server:1234
+  import cloudflare
+}
+```
