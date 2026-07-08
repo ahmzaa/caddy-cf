@@ -1,4 +1,4 @@
-FROM caddy:2.10.2-builder AS builder
+FROM caddy:2.11.4-builder AS builder
 
 RUN --mount=type=cache,target=/go/pkg/mod \
     --mount=type=cache,target=/root/.cache/go-build \
